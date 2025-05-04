@@ -1,18 +1,21 @@
-@import "mocha.css"; 
+@import "mocha.css";
 
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font", "MesloLGS Nerd Font";
+    font-size: 14px;
     min-height: 0;
-    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
-    background: transparent;
-    background-color: @crust;
-    color: @overlay0;
+    background: alpha(@base, 0.95);
+    border-radius: 8px;
+    color: @text;
     transition-property: background-color;
-    transition-duration: 0.1s;
+    transition-duration: 0.5s;
     border-bottom: 1px solid @overlay1;
 }
 
@@ -34,8 +37,20 @@ button:hover {
     border-top: 2px solid @mauve;
 }
 
+#workspaces {
+    background: alpha(@surface0, 0.6);
+    border-radius: 8px;
+    margin: 4px;
+    padding: 0 6px;
+}
+
 #workspaces button {
-    padding: 0 4px;
+    padding: 0 5px;
+    color: @text;
+    background: transparent;
+    border-radius: 4px;
+    margin: 4px 2px;
+    transition: all 0.3s ease;
 }
 
 #workspaces button.focused {
@@ -45,9 +60,13 @@ button:hover {
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 0, 0, 0.3);
     color: @mauve;
-    border-top: 2px solid @mauve;
+    background: alpha(@surface1, 0.6);
+}
+
+#workspaces button:hover {
+    color: @sapphire;
+    background: alpha(@surface2, 0.4);
 }
 
 #workspaces button.urgent {
@@ -75,9 +94,21 @@ button:hover {
   padding-right: 4px;
 }
 
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    background: alpha(@surface0, 0.6);
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
 #clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
+    color: @mauve;
 }
 
 #clock.date {
@@ -85,14 +116,43 @@ button:hover {
     border-bottom: 2px solid @mauve;
 }
 
-#pulseaudio {
-    color: @blue;
-    border-bottom: 2px solid @blue;
+#cpu {
+    color: @green;
+}
+
+#memory {
+    color: @yellow;
 }
 
 #network {
+    color: @sapphire;
+    padding: 0 12px;
+    min-width: 100px;
+}
+
+#network.wifi {
+    color: @blue;
+}
+
+#network.ethernet {
+    color: @sapphire;
+}
+
+#network.linked {
     color: @yellow;
-    border-bottom: 2px solid @yellow;
+}
+
+#network.disconnected {
+    color: @red;
+    min-width: unset;
+}
+
+#pulseaudio {
+    color: @blue;
+}
+
+#pulseaudio.muted {
+    color: @red;
 }
 
 #idle_inhibitor {
@@ -124,4 +184,14 @@ button:hover {
     border-radius: 15px;
     padding-left: 6px;
     padding-right: 6px;
+}
+
+#custom-separator {
+    color: @surface0;
+    margin: 0 2px;
+    padding: 0;
+}
+
+#tray {
+    margin-right: 4px;
 }
