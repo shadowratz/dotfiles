@@ -1,0 +1,40 @@
+/* filepath: /home/rathan/dotfiles/waybar/config/config */
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["clock", "updates"],
+    "modules-center": ["custom/launcher"],
+    "modules-right": ["network", "battery", "memory", "cpu", "pulseaudio"],
+    "custom/launcher": {
+        "exec": "rofi -show drun",
+        "interval": 1
+    },
+    "clock": {
+        "format": "%H:%M",
+        "interval": 60
+    },
+    "updates": {
+        "format": "Updates: {updates}",
+        "interval": 3600
+    },
+    "network": {
+        "format": "{essid} {signalStrength}%",
+        "interval": 10
+    },
+    "battery": {
+        "format": "Battery: {capacity}%",
+        "interval": 60
+    },
+    "memory": {
+        "format": "Memory: {used}/{total}MB",
+        "interval": 60
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 5
+    },
+    "pulseaudio": {
+        "format": "Volume: {volume}%",
+        "interval": 1
+    }
+}

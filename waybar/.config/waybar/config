@@ -1,0 +1,41 @@
+{
+  "layer": "config",
+  "config": {
+    "layer": "modules",
+    "modules": {
+      "clock": {
+        "format": "%H:%M",
+        "interval": 60
+      },
+      "battery": {
+        "format": "{capacity}% {status}",
+        "status": {
+          "charging": "⚡",
+          "discharging": "🔋",
+          "full": "✅"
+        }
+      },
+      "network": {
+        "format": "{essid} {signalStrength}%",
+        "signalStrength": {
+          "low": "📶",
+          "medium": "📶📶",
+          "high": "📶📶📶"
+        }
+      },
+      "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 5
+      },
+      "memory": {
+        "format": "RAM: {used}/{total}MB"
+      }
+    },
+    "settings": {
+      "position": "top",
+      "height": 30,
+      "background": "#1e1e2e",
+      "border": "none"
+    }
+  }
+}
