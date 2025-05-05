@@ -112,3 +112,4 @@ eval "$(mise activate zsh)"
 [[ -f /home/rathan/.dart-cli-completion/zsh-config.zsh ]] && . /home/rathan/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+source /home/rathan/.config/op/plugins.sh
