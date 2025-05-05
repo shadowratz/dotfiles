@@ -113,3 +113,4 @@ eval "$(mise activate zsh)"
 ## [/Completion]
 
 source /home/rathan/.config/op/plugins.sh
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
