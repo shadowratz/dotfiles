@@ -55,7 +55,7 @@ shape = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 14
+size = 16
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -95,6 +95,7 @@ decorations = "full"
 dynamic_title = true
 startup_mode = "Maximized"
 opacity = 0.85
+option_as_alt = "Both"
 
 [window.dimensions]
 columns = 160
@@ -108,3 +109,4 @@ y = 4
 live_config_reload = true
 
 [terminal]
+

@@ -3,8 +3,9 @@
 You are working on ricing and customizing Arch Linux with Hyprland (version 0.48.1). Your workspace includes configuration for:
 - Hyprland
 - Waybar
-- Alacritty
+- Alacritty (Version 0.15.1)
 - Zsh
+- Zellij
 
 Focus on providing suggestions for:
 - Linux dotfiles
