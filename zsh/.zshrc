@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg="lazygit"
+alias lzd="lazydocker"
+alias zed="zed-preview"
 
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
