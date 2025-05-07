@@ -15,9 +15,9 @@
         name = "zsh-syntax-highlighting";
         src = pkgs.zsh-syntax-highlighting;
       }
-      "git"
-      "rails"
-      "terraform"
+      { name = "git"; }
+      { name = "rails"; }
+      { name = "terraform"; }
     ];
 
     shellAliases = {
