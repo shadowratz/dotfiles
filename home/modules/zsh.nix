@@ -4,11 +4,17 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    autosuggestions.enable = true;
 
     # Plugins: replicate Oh My Zsh plugins with home-manager equivalents where possible
     plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+      }
+      {
+        name = "zsh-syntax-highlighting";
+        src = pkgs.zsh-syntax-highlighting;
+      }
       "git"
       "rails"
       "terraform"
@@ -24,11 +30,6 @@
     # Use starship prompt
     initExtra = ''
       eval "$(starship init zsh)"
-    '';
-
-    # Custom configuration from .zshrc
-    extraConfig = ''
-
 
       # Set Zed as the default editor
       export EDITOR="zed"
