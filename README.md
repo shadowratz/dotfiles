@@ -38,6 +38,41 @@ This repository contains my personal configuration files (dotfiles) for various 
 
     *   **To stow multiple configurations:**
         ```bash
+
+## Nix Flake & Home Manager (Multi-System Usage)
+
+This repository also supports reproducible configuration using [Nix flakes](https://nixos.wiki/wiki/Flakes) and [Home Manager](https://nix-community.github.io/home-manager/), for both Linux and macOS (including Apple Silicon).
+
+### Quick Start
+
+1. **Run the bootstrap script** to install and activate your Home Manager configuration:
+
+    ```sh
+    ./bootstrap.sh
+    ```
+    The script will install Nix automatically if it is not already present.
+
+    The script will:
+    - Detect your OS and architecture (Linux, Intel Mac, or Apple Silicon Mac)
+    - Select the correct flake output for your system
+    - Apply your Home Manager configuration
+
+3. **Manual usage** (if you want to run Home Manager directly):
+
+    ```sh
+    nix run github:nix-community/home-manager -- switch --flake ./home#x86_64-linux-default
+    # or for Apple Silicon Mac:
+    nix run github:nix-community/home-manager -- switch --flake ./home#aarch64-darwin-default
+    ```
+
+    Replace the system string as appropriate for your platform.
+
+### Notes
+
+- All configuration is modular and OS-aware.
+- The flake supports both `x86_64-linux` (most Linux systems) and `aarch64-darwin` (Apple Silicon Macs).
+- See `home/flake.nix` and `bootstrap.sh` for details.
+
         stow zsh alacritty hyprland waybar zellij
         ```
 
