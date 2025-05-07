@@ -1,6 +1,8 @@
 { config, lib, ... }:
 
 {
-  # Stub home-manager module for Zed editor configuration.
-  # Migrate Zed settings here using home.file or home-manager options as needed.
+  # Zed editor home-manager module
+  # This module manages Zed editor configuration for your user.
+  # Place any Zed-specific settings or file symlinks here.
+  # Example: home.file.".config/zed/settings.json".source = ../../zed/.config/zed/settings.json;
 }

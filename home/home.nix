@@ -19,4 +19,7 @@
   # Example:
   # home.username = "your-username";
   # home.homeDirectory = "/home/your-username";
+
+  # Set the Home Manager state version for migration safety.
+  home.stateVersion = "24.05";
 }
