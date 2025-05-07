@@ -11,6 +11,9 @@
     nixd
     mise
     zoxide
+    lazygit
+    lazydocker
+    docker
   ]) else [];
 
   # You can import additional modules or set Arch-specific options here.

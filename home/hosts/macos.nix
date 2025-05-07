@@ -8,6 +8,9 @@
     # pkgs.rectangle
     mise
     zoxide
+    lazygit
+    lazydocker
+    docker
   ]) else [];
 
   # You can also set macOS-specific options here.
