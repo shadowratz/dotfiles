@@ -1,0 +1,56 @@
+# Minimal, modern, and informative Starship prompt
+
+# ──────────────────────────────
+# Prompt format: Only essential modules, each on its own line for clarity
+format = """
+$directory\
+$git_branch$git_status\
+$python$nodejs$rust$golang\
+$cmd_duration\
+$status
+$character
+"""
+
+# ──────────────────────────────
+# Prompt Symbol
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol   = "[❯](bold red)"
+vimcmd_symbol  = "[❮](bold yellow)"
+
+# ──────────────────────────────
+# Git Info
+[git_branch]
+format = "[$branch]($style) "
+style  = "bold purple"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style  = "bold yellow"
+
+# ──────────────────────────────
+# Directory Display
+[directory]
+truncation_length = 2
+truncate_to_repo  = false
+style             = "bold blue"
+format            = "[$path]($style) "
+
+# ──────────────────────────────
+# Command Duration (only if >2s)
+[cmd_duration]
+min_time = 2000
+format   = "[$duration]($style) "
+style    = "yellow"
+
+# ──────────────────────────────
+# Language versions (auto-detect)
+# Starship will show Python, Node, Rust, Go, etc. as needed
+
+# ──────────────────────────────
+# Exit code (only on error)
+[status]
+style   = "bold red"
+symbol  = "✗ "
+format  = "[$symbol$common_meaning]($style) "
+disabled = false

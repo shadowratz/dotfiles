@@ -50,7 +50,6 @@
 
   programs.starship = {
     enable = true;
-    # Optionally, you can specify a custom config file:
-    # settings = { };
+    settings = import ./starship.toml;
   };
 }
