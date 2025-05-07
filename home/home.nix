@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{ config
+, pkgs
+, username ? null
+, homeDirectory ? null
+, ...
+}:
 
 {
   # Main home-manager configuration entry point.
@@ -15,10 +20,9 @@
     ./hosts/linux.nix
   ];
 
-  # User-wide options can be set here.
-  # Example:
-  # home.username = "your-username";
-  # home.homeDirectory = "/home/your-username";
+  # Set username and home directory, with fallback to environment variables
+  home.username = username or (builtins.getEnv "USER");
+  home.homeDirectory = homeDirectory or (builtins.getEnv "HOME");
 
   # Set the Home Manager state version for migration safety.
   home.stateVersion = "24.05";

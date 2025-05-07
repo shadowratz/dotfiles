@@ -56,6 +56,10 @@ This repository also supports reproducible configuration using [Nix flakes](http
     - Detect your OS and architecture (Linux, Intel Mac, or Apple Silicon Mac)
     - Select the correct flake output for your system
     - Apply your Home Manager configuration
+    - **Automatically detect and set your username and home directory for Home Manager.**  
+      If you are cloning this repository for the first time, you do not need to manually edit any configuration files to set your username or home directory. The bootstrap script will handle this for you.
+
+    > **Note:** If you use Home Manager manually (without the bootstrap script), you must ensure that `home.username` and `home.homeDirectory` are set in your configuration. See the comments in `home/home.nix` for details.
 
 3. **Manual usage** (if you want to run Home Manager directly):
 

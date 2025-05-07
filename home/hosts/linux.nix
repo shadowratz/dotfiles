@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     hyprland
     waybar
+    nixd
   ];
 
   # You can import additional modules or set Arch-specific options here.

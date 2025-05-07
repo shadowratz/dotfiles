@@ -53,8 +53,15 @@ esac
 
 flake_output="${system}-default"
 
-# Install and activate home-manager using flakes
+# Detect username and home directory for Home Manager
+detected_username="$(id -un)"
+detected_homedir="$HOME"
+
+echo "Detected username: $detected_username"
+echo "Detected home directory: $detected_homedir"
+
+# Install and activate home-manager using flakes, passing username and homeDirectory
 echo "Activating home-manager configuration for $flake_output..."
-nix run github:nix-community/home-manager -- switch --flake "$PWD/home#$flake_output"
+nix run github:nix-community/home-manager -- switch --flake "$PWD/home#$flake_output" --impure --extra-experimental-features 'nix-command flakes' --option extra-experimental-features 'nix-command flakes' --override-input home.username "$detected_username" --override-input home.homeDirectory "$detected_homedir"
 
 echo "Bootstrap process complete. Please restart your shell for all changes to take effect."
