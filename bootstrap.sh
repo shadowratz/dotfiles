@@ -7,6 +7,22 @@ set -e
 
 echo "Starting bootstrap process..."
 
+# Ensure user's nix.conf enables nix-command and flakes
+NIX_CONF="$HOME/.config/nix/nix.conf"
+mkdir -p "$(dirname "$NIX_CONF")"
+if grep -q '^experimental-features.*nix-command.*flakes' "$NIX_CONF" 2>/dev/null; then
+  echo "nix-command and flakes already enabled in $NIX_CONF"
+else
+  if grep -q '^experimental-features' "$NIX_CONF" 2>/dev/null; then
+    # Update existing line
+    sed -i.bak '/^experimental-features/ s|$| nix-command flakes|' "$NIX_CONF"
+  else
+    # Add new line
+    echo "experimental-features = nix-command flakes" >> "$NIX_CONF"
+  fi
+  echo "Enabled nix-command and flakes in $NIX_CONF"
+fi
+
 # Check for Nix installation
 if ! command -v nix &> /dev/null; then
   echo "Nix not found. Installing Nix package manager..."
