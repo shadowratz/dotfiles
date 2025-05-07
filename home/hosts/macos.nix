@@ -6,11 +6,13 @@
   home.packages = if pkgs.stdenv.isDarwin then (with pkgs; [
     # pkgs.iterm2
     # pkgs.rectangle
-    mise
-    zoxide
-    lazygit
-    lazydocker
     docker
+    lazydocker
+    lazygit
+    mise
+    nixd
+    zellij
+    zoxide
   ]) else [];
 
   # You can also set macOS-specific options here.

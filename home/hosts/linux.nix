@@ -6,14 +6,15 @@
 
   # Example: Install Hyprland and Waybar only on Arch
   home.packages = if pkgs.stdenv.isLinux then (with pkgs; [
-    hyprland
-    waybar
-    nixd
-    mise
-    zoxide
-    lazygit
-    lazydocker
     docker
+    hyprland
+    lazydocker
+    lazygit
+    mise
+    nixd
+    waybar
+    zellij
+    zoxide
   ]) else [];
 
   # You can import additional modules or set Arch-specific options here.
