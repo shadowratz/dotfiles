@@ -1,0 +1,21 @@
+# Ignore OS and editor junk
+.DS_Store
+*.swp
+*.swo
+*.bak
+
+# Ignore Nix build results and garbage
+/result
+/result-*
+/.nix-*
+/.nix-profile
+/nix
+/nix-store
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Do NOT ignore flake.lock or flake.nix!
+!flake.lock
+!flake.nix
