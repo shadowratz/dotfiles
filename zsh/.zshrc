@@ -110,9 +110,10 @@ source $ZSH/oh-my-zsh.sh
 alias lg="lazygit"
 alias lzd="lazydocker"
 alias zed="zed-preview"
+alias zel="zellij"
 
-eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -120,4 +121,3 @@ eval "$(mise activate zsh)"
 ## [/Completion]
 
 source /home/rathan/.config/op/plugins.sh
-export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
