@@ -58,18 +58,22 @@ This repository also supports reproducible configuration using [Nix flakes](http
     - Apply your Home Manager configuration
     - **Automatically detect and set your username and home directory for Home Manager.**  
       If you are cloning this repository for the first time, you do not need to manually edit any configuration files to set your username or home directory. The bootstrap script will handle this for you.
+    - **Automatically back up any existing dotfiles (like `.zshrc`, `.zshenv`, etc.) with a `.backup` extension before replacing them.** This is done by always using the `-b backup` flag with `home-manager switch`.
 
-    > **Note:** If you use Home Manager manually (without the bootstrap script), you must ensure that `home.username` and `home.homeDirectory` are set in your configuration. See the comments in `home/home.nix` for details.
+    > **Note:** If you use Home Manager manually (without the bootstrap script), you must ensure that `home.username` and `home.homeDirectory` are set in your configuration. See the comments in `home/home.nix` for details.  
+    > Also, always use the `-b backup` flag with `home-manager switch` to safely back up any existing files before they are replaced by Home Manager.
 
 3. **Manual usage** (if you want to run Home Manager directly):
 
     ```sh
-    nix run github:nix-community/home-manager -- switch --flake ./home#x86_64-linux-default
+    nix run github:nix-community/home-manager -- switch -b backup --flake ./home#x86_64-linux-default
     # or for Apple Silicon Mac:
-    nix run github:nix-community/home-manager -- switch --flake ./home#aarch64-darwin-default
+    nix run github:nix-community/home-manager -- switch -b backup --flake ./home#aarch64-darwin-default
     ```
 
     Replace the system string as appropriate for your platform.
+
+    The `-b backup` flag ensures that any existing dotfiles (like `.zshrc`, `.zshenv`, etc.) are automatically backed up with a `.backup` extension before being replaced by Home Manager.
 
 ### Notes
 

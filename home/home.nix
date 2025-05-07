@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 
+let
+  hostImport =
+    if pkgs.stdenv.isLinux then ./hosts/linux.nix
+    else if pkgs.stdenv.isDarwin then ./hosts/macos.nix
+    else null;
+in
 {
   # Main home-manager configuration entry point.
   # Import modules for each tool and OS-specific overrides.
@@ -11,8 +17,8 @@
     ./modules/hyprland.nix
     ./modules/waybar.nix
     ./modules/zed.nix
-    ./hosts/macos.nix
     ./hosts/linux.nix
+    ./hosts/macos.nix
   ];
 
   # Set username and home directory from environment variables

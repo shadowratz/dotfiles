@@ -62,6 +62,6 @@ echo "Detected home directory: $detected_homedir"
 
 # Install and activate home-manager using flakes, setting USER and HOME environment variables
 echo "Activating home-manager configuration for $flake_output..."
-USER="$detected_username" HOME="$detected_homedir" nix run github:nix-community/home-manager -- switch --flake "$PWD/home#$flake_output" --impure --extra-experimental-features 'nix-command flakes' --option extra-experimental-features 'nix-command flakes'
+USER="$detected_username" HOME="$detected_homedir" nix run github:nix-community/home-manager -- switch -b backup --flake "$PWD/home#$flake_output" --impure --extra-experimental-features 'nix-command flakes' --option extra-experimental-features 'nix-command flakes'
 
 echo "Bootstrap process complete. Please restart your shell for all changes to take effect."
