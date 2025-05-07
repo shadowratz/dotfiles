@@ -54,14 +54,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = ''
-        $directory
-        $git_branch$git_status
-        $python$nodejs$rust$golang
-        $cmd_duration
-        $status
-        $character
-      '';
+      format = "$directory$git_branch$git_status$python$nodejs$rust$golang\n$character ";
 
       character = {
         success_symbol = "[❯](bold green)";
