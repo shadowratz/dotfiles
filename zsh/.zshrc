@@ -114,6 +114,7 @@ alias zel="zellij"
 
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
