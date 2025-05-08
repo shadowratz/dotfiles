@@ -11,6 +11,7 @@
     lazygit
     mise
     nixd
+    nil
     zellij
     zoxide
   ]) else [];

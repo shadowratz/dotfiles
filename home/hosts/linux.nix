@@ -12,6 +12,7 @@
     lazygit
     mise
     nixd
+    nil
     waybar
     zellij
     zoxide
