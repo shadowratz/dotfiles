@@ -31,9 +31,12 @@
 
     # Use starship prompt
     initExtra = ''
-      # Ensure Homebrew binaries are in PATH on macOS (for zed-preview and others)
+      # 1Password SSH agent integration for macOS and Linux
       if [[ "$OSTYPE" == "darwin"* ]]; then
         export PATH="/opt/homebrew/bin:$PATH"
+        export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        export SSH_AUTH_SOCK="/run/user/$(id -u)/1password/agent.sock"
       fi
 
       eval "$(starship init zsh)"
