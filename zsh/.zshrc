@@ -115,6 +115,7 @@ alias zel="zellij"
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
