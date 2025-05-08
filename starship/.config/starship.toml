@@ -1,5 +1,6 @@
 format = "$directory$git_branch$git_status$python$nodejs$rust$golang\n$character "
 add_newline = false
+
 [character]
 error_symbol = "[❯](bold red)"
 success_symbol = "[❯](bold green)"
