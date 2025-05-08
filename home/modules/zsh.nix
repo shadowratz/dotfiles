@@ -31,6 +31,11 @@
 
     # Use starship prompt
     initExtra = ''
+      # Ensure Homebrew binaries are in PATH on macOS (for zed-preview and others)
+      if [[ "$OSTYPE" == "darwin"* ]]; then
+        export PATH="/opt/homebrew/bin:$PATH"
+      fi
+
       eval "$(starship init zsh)"
 
       # Set Zed as the default editor
