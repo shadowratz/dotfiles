@@ -1,0 +1,31 @@
+format = "$directory$git_branch$git_status$python$nodejs$rust$golang\n$character "
+add_newline = false
+[character]
+error_symbol = "[❯](bold red)"
+success_symbol = "[❯](bold green)"
+vimcmd_symbol = "[❮](bold yellow)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+min_time = 2000
+style = "yellow"
+
+[directory]
+format = "[$path]($style) "
+style = "bold blue"
+truncate_to_repo = false
+truncation_length = 2
+
+[git_branch]
+format = "[$branch]($style) "
+style = "bold purple"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "bold yellow"
+
+[status]
+disabled = false
+format = "[$symbol$common_meaning]($style) "
+style = "bold red"
+symbol = "✗ "
