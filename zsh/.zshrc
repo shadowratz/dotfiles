@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
+
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -109,17 +111,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg="lazygit"
 alias lzd="lazydocker"
-alias zed="zed-preview"
 alias zel="zellij"
 
+eval "$(/opt/homebrew/bin/brew shellenv)" # brew has to be first for other tools to be found
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/rathan/.dart-cli-completion/zsh-config.zsh ]] && . /home/rathan/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
-
-source /home/rathan/.config/op/plugins.sh
