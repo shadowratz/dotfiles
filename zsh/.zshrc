@@ -122,3 +122,6 @@ eval "$(starship init zsh)"
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/rathan/.dart-cli-completion/zsh-config.zsh ]] && . /home/rathan/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+# postgres client to connect with postgres running in docker
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
