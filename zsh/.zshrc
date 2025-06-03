@@ -125,3 +125,6 @@ eval "$(starship init zsh)"
 
 # postgres client to connect with postgres running in docker
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
