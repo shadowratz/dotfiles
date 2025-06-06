@@ -113,18 +113,21 @@ alias lg="lazygit"
 alias lzd="lazydocker"
 alias zel="zellij"
 
+# Load MacOS specific settings
+if [[ "$OSTYPE" == "darwin"* ]]; then
 eval "$(/opt/homebrew/bin/brew shellenv)" # brew has to be first for other tools to be found
+# postgres client to connect with postgres running in docker
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi
+
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
-## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/rathan/.dart-cli-completion/zsh-config.zsh ]] && . /home/rathan/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
-# postgres client to connect with postgres running in docker
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
