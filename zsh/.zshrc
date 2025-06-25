@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/bin:$PATH"
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
@@ -128,6 +128,7 @@ eval "$(starship init zsh)"
 [[ -f /home/rathan/.dart-cli-completion/zsh-config.zsh ]] && . /home/rathan/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
