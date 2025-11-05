@@ -35,6 +35,7 @@ log_onvif_connection() {
     local log_dir=$(dirname "$SYSTEM_LOG_FILE")
     if [ ! -d "$log_dir" ]; then
         mkdir -p "$log_dir"
+        chmod 750 "$log_dir"
     fi
     
     # Get current timestamp in the specified format
