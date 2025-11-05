@@ -9,7 +9,8 @@ SYSTEM_LOG_FILE="/root/log/system.log"
 # Function to check if logging is enabled
 is_logging_enabled() {
     if [ -f "$LOG_ENABLE_FILE" ]; then
-        local content=$(cat "$LOG_ENABLE_FILE" | tr -d '[:space:]')
+        local content
+        content=$(tr -d '[:space:]' < "$LOG_ENABLE_FILE")
         if [ "$content" = "1" ]; then
             return 0
         fi
@@ -32,14 +33,16 @@ log_onvif_connection() {
     fi
     
     # Create log directory if it doesn't exist
-    local log_dir=$(dirname "$SYSTEM_LOG_FILE")
+    local log_dir
+    log_dir=$(dirname "$SYSTEM_LOG_FILE")
     if [ ! -d "$log_dir" ]; then
         mkdir -p "$log_dir"
         chmod 750 "$log_dir"
     fi
     
     # Get current timestamp in the specified format
-    local timestamp=$(date +"%a %b %d %H:%M:%S %Z %Y")
+    local timestamp
+    timestamp=$(date +"%a %b %d %H:%M:%S %Z %Y")
     
     # Log the connection
     echo "ONVIF: Incoming connection from ($ip_address) at $timestamp" >> "$SYSTEM_LOG_FILE"
