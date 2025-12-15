@@ -27,7 +27,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
         -- c = "Firefox Developer Edition",
         d = "OrbStack",
         -- g = "Sourcetree",
-        k = "Slack",
+        k = "Cliq",
         m = "Figma",
         -- m = "Obsidian",
         -- m = "Emacs",
@@ -37,7 +37,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
         s = "Safari",
         w = "Warp",
         x = "Firefox",
-        z = "Zed Preview",
+        z = "Zed",
     }
 })
 
