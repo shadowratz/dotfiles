@@ -35,7 +35,7 @@ spoon.SpoonInstall:andUse("AppLauncher", {
         -- p = "Postman",
         q = "DBeaver",
         s = "Safari",
-        w = "Warp",
+        w = "WhatsApp",
         x = "Firefox",
         z = "Zed",
     }
