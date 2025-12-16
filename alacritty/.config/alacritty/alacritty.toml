@@ -1,3 +1,4 @@
+# CONFIG MADE ON ARCH-LINUX TO MATCH THE THEME -- START
 # [bell]
 # animation = "EaseOutExpo"
 # duration = 0
@@ -40,6 +41,8 @@
 # [colors.primary]
 # background = "0x1E1D2F"
 # foreground = "0xD9E0EE"
+
+# CONFIG MADE ON ARCH-LINUX TO MATCH THE THEME -- END
 
 [cursor]
 blink_interval = 500
