@@ -20,8 +20,8 @@ spoon.SpoonInstall:andUse("AppLauncher", {
         -- a = "Zed Preview",
         a = "Visual Studio Code",
         -- a = "Zed",
-        -- c = "Google Chrome",
-        c = "Google Chrome Dev",
+        c = "Google Chrome",
+        -- c = "Google Chrome Dev",
         -- c = "Arc",
         -- c = "Firefox",
         -- c = "Firefox Developer Edition",
@@ -62,9 +62,14 @@ function toggleTerminal()
         hs.application.launchOrFocus(appName)
     else
         if app:isHidden() then
+            -- App is hidden; show and focus it
             hs.application.launchOrFocus(appName)
+        elseif app:isFrontmost() then
+            -- App is visible and currently focused; hide it
+            app:hide()
         else
-            app:hide() -- hide
+            -- App is visible but not focused; bring it to focus
+            hs.application.launchOrFocus(appName)
         end
     end
 end
